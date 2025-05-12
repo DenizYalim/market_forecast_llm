@@ -7,3 +7,6 @@ Objectives
     2- Make chatgpt analyze them openai api
 
     3- Make market  using binance api
+
+
+    4 - Finetune prompts, LLMs chosen for better portfolio 
