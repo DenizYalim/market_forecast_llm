@@ -1,0 +1,9 @@
+Main Goal: Accurately forecast future market trends using an LLM that analyzes news headlines
+
+Objectives
+
+    1- Set up Scrapers Headlines -> probably with selenium
+        - Headlines should be stored in a basic db(or maybe in json) with {HEADLINE, DATE, SITE, LINK} columns
+    2- Make chatgpt analyze them openai api
+
+    3- Make market  using binance api
