@@ -7,14 +7,21 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 (os.getenv("OPENAI_API_KEY"))
 client = openai.OpenAI()
 
-headline = "Elon musk dies. Stockholders expect X to be more usable now"
+def getResponse(prompt,  context = None):
+    if context is None:
+        context =" You are a financial analyst."
+    response = client.chat.completions.create(
+        model="gpt-4",
+        messages=[
+            {"role": "system", "content": context},
+            {"role": "user", "content": prompt}
+        ]
+    )
 
-response = client.chat.completions.create(
-    model="gpt-3.5-turbo",
-    messages=[
-        {"role": "system", "content": "You are a financial analyst."},
-        {"role": "user", "content": "Will this headline cause a stock to rise or fall? Headline: Apple reports record profits."}
-    ]
-)
+    return response.choices[0].message.content
 
-print(response.choices[0].message.content)
+# print(getResponse("Hello gpt how are you doing? what is 1 + 1"))
+
+
+if __name__ != "__main__": # this works lmaooooooo
+    pass
