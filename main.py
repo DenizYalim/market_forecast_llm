@@ -1,4 +1,4 @@
-from llm.LLMExamine import getResponse
+from llm.consulterLLM import getResponse
 
 
 

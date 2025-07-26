@@ -26,7 +26,7 @@ def consult_llm():
 Keyword arguments:
 response : String  -- Analyze from response
 
-Return: return_description
+Return: dict : {enstrument : enum : {BOUGHT : count, SOLD : count, HOLD : count}} or maybe just void idk yet
 """
 def caller_llm():
     pass
