@@ -7,4 +7,4 @@ SITES_TO_SCRAPE = {
     'https://www.bloomberg.com/europe', 
     'https://www.wsj.com/'
 }
-# Examining the xml codes for these will be really painful
+# Examining the xpath codes for these will be really painful
