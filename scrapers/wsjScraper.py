@@ -6,7 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 def scrape_wsj_headlines(): 
     options = webdriver.ChromeOptions()
-    options.add_argument("--headless")
+    # options.add_argument("--headless")
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options) # Maybe turn this into firefox
 
     driver.get("https://www.wsj.com/")
@@ -22,4 +22,4 @@ def scrape_wsj_headlines():
     driver.quit()
 
 if __name__ == "__main__":
-    scrape_bbc_headlines()
+    scrape_wsj_headlines()
