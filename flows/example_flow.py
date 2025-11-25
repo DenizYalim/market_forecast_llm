@@ -1,8 +1,5 @@
-from LLM import example_llm
-
-class _base_flow: 
-    def run(date, data, ticker=None):
-        pass
+from flows.flow_base import _base_flow
+from LLM.LLM import example_llm
 
 class example_flow(_base_flow): 
     def run(date, data, ticker=None):

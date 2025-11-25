@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta 
-from flow_base import example_flow
+from flows.flow_base import example_flow
 
 
 def get_data(date: str, ticker=None):
