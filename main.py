@@ -1,5 +1,5 @@
-from datetime import datetime, timedelta
-from LLM import example_llm
+from datetime import datetime, timedelta 
+from flow_base import example_flow
 
 
 def get_data(date: str, ticker=None):
@@ -13,16 +13,15 @@ def get_data(date: str, ticker=None):
     return {"headlines": ["Apple releases new product", "Market hits all-time high"]}
 
 
-def flow(cur_date, data, ticker=None):
+def run_flow(cur_date, data, ticker=None):
     """
     Keyword arguments:
     arguments -- cur_date:str, data:dict, ticker:str = None,
     Return: response:json
     """
-
-    llm = example_llm()
-    prompt = f"Given the data for {cur_date} and ticker {ticker}, analyze the following headlines: {data['headlines']}"
-    return llm.work(prompt)
+    
+    example_flow_instance = example_flow()
+    return example_flow_instance.run(cur_date, data, ticker)
 
 
 def backtest(start_date: str, end_date: str, ticker=None):
@@ -37,7 +36,7 @@ def backtest(start_date: str, end_date: str, ticker=None):
         date_str = current_date.strftime("%Y-%m-%d")
         data = get_data(date_str, ticker)
 
-        results.append(flow(date_str, data, ticker))
+        results.append(run_flow(date_str, data, ticker))
 
         current_date += timedelta(days=1)
 
