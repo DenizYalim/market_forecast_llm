@@ -1,4 +1,5 @@
 class flow_base:
+    
     def flow(self, cur_date, data, ticker=None):
         """
         Keyword arguments:
